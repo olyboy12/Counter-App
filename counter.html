@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <style>
+		body {
+    background-image: url("giftimages/station.webp");
+    background-size: cover;
+    font-family: - Oxygen, apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    text-align: center;
+	 height: 100vh;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.lee{
+    border: none;
+    padding-top: 20px ;
+    padding-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#increment-btn {
+    background: #C49A1C;
+}
+
+#save-btn {
+    background: darkgreen;
+}
+
+#decrement-btn {
+    
+    background: #E8D35E;
+}
+	
+.no-click{
+pointer-events:none;
+}
+.olami {
+  border: none;
+    padding-top: 20px ;
+    padding-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+padding: 20px 25px;
+}
+#save-btn{
+background: green;
+}
+.container{
+max-width: 80%;
+background: white;
+margin: auto;
+border: 20px solid black;
+border-radius: 30px;
+padding-bottom: 60px;
+padding-top: 50px;
+}
+		</style>
+    </head>
+    <body>
+	<div>
+		<div class ="container">	
+        <h1>Counter App:</h1>
+        <h2 id="count-el">0</h2>
+	<div>
+		<button class="lee" id="increment-btn" onclick="increment()">INCREMENT</button>
+		<button class="olami" id="decrement-btn" onclick="decrement()"> Decrement </button>
+		</div>
+		<div>
+		<button  class="lee" id="save-btn" onclick="save()">SAVE</button>
+		</div>
+		<p id="save-el"> Previous Entries: </p>
+	</div>
+		<script>
+            //document.getElementById("count-el").innerText = 5
+			
+			let countEl = document.getElementById("count-el");
+//passing in argument  is giving the function some data to work with. 
+//like here we are specifying the id of the element we want to grab. chef and infrident
+			console.log(countEl)
+			
+			let count = 0;
+			
+			function increment(){
+			count = count + 1;
+			countEl.innerText = count
+			}
+			
+			function decrement(){
+			count -= 1
+			countEl.innerText = count
+			}
+
+			let saveEl = document.getElementById("save-el")
+			function save(){
+			let countStr = count + " - "
+			count = 0;
+			countEl.textContent = count
+			saveEl.textContent += countStr
+			}
+        </script>
+    </body>
+</html>
